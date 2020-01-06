@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./parser"
 	"encoding/json"
+	"github.com/Geooorg/avwx-metar-json-parser-go/parser"
 	"log"
 )
 

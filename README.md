@@ -9,3 +9,9 @@ At the moment, only the METAR raw string, wind direction and speed as well as te
 Export the following environment parameters:
  - AVWX_AIRPORT (e.g. EDDF for the airport Frankfurt/Main)
  - AVWX_TOKEN for your API token. This can be requested at avwx.rest
+ 
+## Running the code 
+
+    export AVWX_AIRPORT=... 
+    export AVWX_TOKEN=...
+    go test integration_test.go 
