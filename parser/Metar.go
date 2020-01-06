@@ -17,9 +17,9 @@ func (it MetarData) String() string {
 	var buffer bytes.Buffer
 
 	buffer.WriteString(", Raw " + it.Raw)
-	buffer.WriteString(", WindDirection " + fmt.Sprint(it.WindDirection))
-	buffer.WriteString(", WindSpeed " + fmt.Sprintf("%f", it.WindSpeed))
-	buffer.WriteString(", Temperatur " + fmt.Sprintf("%f", it.Temperatur) + it.TemperaturUnit)
+	buffer.WriteString(", WindDirection " + fmt.Sprintf("%d", it.WindDirection))
+	buffer.WriteString(", WindSpeed " + fmt.Sprintf("%d", it.WindSpeed))
+	buffer.WriteString(", Temperatur " + fmt.Sprintf("%d ", it.Temperatur) + "°" + it.TemperaturUnit)
 
 	return buffer.String()
 }

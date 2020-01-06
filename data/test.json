@@ -18,7 +18,7 @@
   ],
   "flight_rules": "VFR",
   "other": [],
-  "sanitized": "EDDH 062050Z 19008KT 9999 FEW021 04/01 Q1019 NOSIG",
+  "sanitized": "EDDF 062050Z 19008KT 9999 FEW021 04/01 Q1019 NOSIG",
   "visibility": {
     "repr": "9999",
     "value": 9999,
@@ -35,8 +35,8 @@
     "value": 8,
     "spoken": "eight"
   },
-  "raw": "EDDH 062050Z 19008KT 9999 FEW021 04/01 Q1019 NOSIG",
-  "station": "EDDH",
+  "raw": "EDDF 062050Z 19008KT 9999 FEW021 04/01 Q1019 NOSIG",
+  "station": "EDDF",
   "time": {
     "repr": "062050Z",
     "dt": "2020-01-06T20:50:00+00:00Z"
