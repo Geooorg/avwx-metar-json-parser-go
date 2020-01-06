@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "timestamp": "2020-01-06T21:16:30.514313+00:00Z"
+  },
+  "altimeter": {
+    "repr": "1019",
+    "value": 1019,
+    "spoken": "one zero one nine"
+  },
+  "clouds": [
+    {
+      "repr": "FEW021",
+      "type": "FEW",
+      "altitude": 21,
+      "modifier": null,
+      "direction": null
+    }
+  ],
+  "flight_rules": "VFR",
+  "other": [],
+  "sanitized": "EDDH 062050Z 19008KT 9999 FEW021 04/01 Q1019 NOSIG",
+  "visibility": {
+    "repr": "9999",
+    "value": 9999,
+    "spoken": "nine nine nine nine"
+  },
+  "wind_direction": {
+    "repr": "190",
+    "value": 190,
+    "spoken": "one nine zero"
+  },
+  "wind_gust": null,
+  "wind_speed": {
+    "repr": "08",
+    "value": 8,
+    "spoken": "eight"
+  },
+  "raw": "EDDH 062050Z 19008KT 9999 FEW021 04/01 Q1019 NOSIG",
+  "station": "EDDH",
+  "time": {
+    "repr": "062050Z",
+    "dt": "2020-01-06T20:50:00+00:00Z"
+  },
+  "remarks": "NOSIG",
+  "dewpoint": {
+    "repr": "01",
+    "value": 1,
+    "spoken": "one"
+  },
+  "remarks_info": {
+    "dewpoint_decimal": null,
+    "temperature_decimal": null
+  },
+  "runway_visibility": [],
+  "temperature": {
+    "repr": "04",
+    "value": 4,
+    "spoken": "four"
+  },
+  "wind_variable_direction": [],
+  "units": {
+    "altimeter": "hPa",
+    "altitude": "ft",
+    "temperature": "C",
+    "visibility": "m",
+    "wind_speed": "kt"
+  }
+}
