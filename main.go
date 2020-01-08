@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	metar, e := parser.GetMetarData()
+	metar, e := parser.Api{}.GetMetarData()
 	if e != nil {
 		log.Println("WARN: Could not read data from web service")
 	}

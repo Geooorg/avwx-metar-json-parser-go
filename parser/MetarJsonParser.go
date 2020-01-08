@@ -15,6 +15,13 @@ import (
 const URL_TEMPLATE = "http://avwx.rest/api/metar/%s?token=%s"
 const HTTP_TIMEOUT = 10
 
+type Api struct {
+}
+
+type PublicApi interface {
+	GetMetarData() (MetarData, error)
+}
+
 type JsonStruct struct {
 	Raw           string `json:"raw"`
 	WindDirection struct {
@@ -34,7 +41,7 @@ type JsonStruct struct {
 	} `json:"units"`
 }
 
-func GetMetarData() (MetarData, error) {
+func (api *Api) GetMetarData() (MetarData, error) {
 	var result = MetarData{}
 
 	jsonStr, err := readJsonFromWebservice()
