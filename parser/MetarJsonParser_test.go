@@ -1,7 +1,6 @@
-package main
+package parser
 
 import (
-	"./parser"
 	"encoding/json"
 	"fmt"
 	"github.com/stretchr/testify/assert"
@@ -14,23 +13,23 @@ func TestUrlIsParameterizedCorrectly(t *testing.T) {
 	os.Setenv("AVWX_TOKEN", "abcTOKEN123")
 	os.Setenv("AVWX_AIRPORT", "EDDF")
 
-	url := parser.GetParameterizedUrl()
+	url := GetParameterizedUrl()
 	assert.Equal(t, url, "http://avwx.rest/api/metar/EDDF?token=abcTOKEN123", "URL matches")
 }
 
 func TestDataCanBeConverted(t *testing.T) {
-	jsonFile, err := os.Open("data/test.json")
+	jsonFile, err := os.Open("../data/test.json")
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	defer jsonFile.Close()
 
-	var metarDataJson parser.JsonStruct
+	var metarDataJson JsonStruct
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	json.Unmarshal(byteValue, &metarDataJson)
 
-	metar := parser.ConvertToMetarData(metarDataJson)
+	metar := ConvertToMetarData(metarDataJson)
 
 	fmt.Println(metar.Raw)
 

@@ -1,21 +1,14 @@
 package main
 
 import (
-	"encoding/json"
 	"github.com/Geooorg/avwx-metar-json-parser-go/parser"
 	"log"
 )
 
 func main() {
-
-	jsonStr, e := parser.ReadJsonFromWebservice()
+	metar, e := parser.GetMetarData()
 	if e != nil {
-		log.Fatal("Could not read data from web service")
+		log.Println("WARN: Could not read data from web service")
 	}
-
-	var metarDataJson parser.JsonStruct
-	json.Unmarshal(jsonStr, &metarDataJson)
-
-	metar := parser.ConvertToMetarData(metarDataJson)
 	log.Printf("METAR %s", metar)
 }

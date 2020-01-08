@@ -2,6 +2,7 @@ package parser
 
 import (
 	"bytes"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
@@ -33,6 +34,24 @@ type JsonStruct struct {
 	} `json:"units"`
 }
 
+func GetMetarData() (MetarData, error) {
+	var result = MetarData{}
+
+	jsonStr, err := readJsonFromWebservice()
+	if err != nil {
+		log.Print("Could not read data from web service")
+		return result, err
+	}
+
+	var jsonStruct JsonStruct
+	err = json.Unmarshal(jsonStr, &jsonStruct)
+	if err != nil {
+		return result, err
+	}
+
+	return ConvertToMetarData(jsonStruct), nil
+}
+
 func ConvertToMetarData(metarJson JsonStruct) MetarData {
 	return MetarData{
 		Raw:            metarJson.Raw,
@@ -43,7 +62,7 @@ func ConvertToMetarData(metarJson JsonStruct) MetarData {
 	}
 }
 
-func ReadJsonFromWebservice() ([]byte, error) {
+func readJsonFromWebservice() ([]byte, error) {
 
 	paramaterizedUrl := GetParameterizedUrl()
 
