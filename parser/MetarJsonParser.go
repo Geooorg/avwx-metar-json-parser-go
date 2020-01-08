@@ -41,7 +41,7 @@ type JsonStruct struct {
 	} `json:"units"`
 }
 
-func (api *Api) GetMetarData() (MetarData, error) {
+func (api Api) GetMetarData() (MetarData, error) {
 	var result = MetarData{}
 
 	jsonStr, err := readJsonFromWebservice()
